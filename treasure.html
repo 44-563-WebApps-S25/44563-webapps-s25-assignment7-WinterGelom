@@ -121,9 +121,8 @@
                         return;
                     }
                 }
-                console.log(snakeLocation/7-lastLocation/7)
-                console.log(lastLocation%7-snakeLocation%7)
-                if((snakeLocation/7-lastLocation/7 <= 1 & snakeLocation/7-lastLocation/7 >= -1) & ( snakeLocation%7-lastLocation%7 <= 1 & snakeLocation%7-lastLocation%7 >= -1)){
+                if((snakeLocation/7-lastLocation/7 <= 1 & snakeLocation/7-lastLocation/7 >= -1) 
+                & ( snakeLocation%7-lastLocation%7 <= 1 & snakeLocation%7-lastLocation%7 >= -1)){
                     help.innerHTML = "rattle";
                 }
                 else{
