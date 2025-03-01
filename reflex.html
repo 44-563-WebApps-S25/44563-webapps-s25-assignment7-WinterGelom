@@ -11,12 +11,11 @@
 </head>
 <body>
   <h1>Cody Garner reflexes</h1>
-  <h2>Timeout - Red in 3 seconds</h2>
   
   <div id="target">Your time</div>
   <div id="counter">Count</div>
 
-  <button type="button" class="btn btn-primary">Go</button>
+  <button type="button" class="btn btn-primary" onclick="beginTime()">Go</button>
   <button type="button" onclick="recordTime()">Halt</button>
   
   <script>
@@ -24,6 +23,29 @@
     function recordTime(){
       haltTime = Date.now();
       console.log(haltTime);
+    }
+    
+    function beginTime(){
+      for( let i = 0; i < 6;i++){
+        setTimeout(
+            () => {
+            document.getElementById('counter').innerHTML = i;
+          }, ((5-i)*1000)
+        )
+      }
+      setTimeout(
+        ()=>{
+          if(haltTime == undefined){
+            document.getElementById("target").innerHtml = "Not soon enough"
+          }
+          else{
+            let targetTime = Date.now();
+            let difference = targetTime - haltTime;
+            document.getElementById("target").innerHTML = "Time was " + difference; 
+          }
+        },
+        5000
+      )
     }
   </script>
 
